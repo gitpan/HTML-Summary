@@ -65,8 +65,9 @@ outside of CRE without express prior permission from CRE.
 #
 #------------------------------------------------------------------------------
 
-require 5.004;
+require 5.006;
 use strict;
+use warnings;
 
 #==============================================================================
 #
@@ -93,7 +94,7 @@ use vars qw(
     %char_re
 );
 
-$VERSION = '0.001';
+$VERSION = '0.018';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( jtruncate );
 
