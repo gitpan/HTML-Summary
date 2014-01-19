@@ -12,7 +12,6 @@ examples/jtruncate.pl
 examples/summarize.pl
 lib/HTML/Summary.pm
 lib/Lingua/JA/Jtruncate.pm
-lib/Lingua/JA/Jcode.pm
 lib/Text/Sentence.pm
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

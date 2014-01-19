@@ -19,9 +19,10 @@ Lingua::JA::Jtruncate - module to truncate Japanese encoded text.
 
 The jtruncate function truncates text to a length $length less than bytes. It
 is designed to cope with Japanese text which has been encoded using one of the
-standard encoding schemes - EUC, JIS, and Shift-JIS. It uses the
-Lingua::JA::Jcode module to detect what encoding is being used. If the text is
-none of the above Japanese encodings, the text is just truncated using substr.
+standard encoding schemes - EUC, JIS, and Shift-JIS.
+It uses the L<Jcode> module to detect what encoding is being used.
+If the text is none of the above Japanese encodings,
+the text is just truncated using substr.
 If it is detected as Japanese text, it tries to truncate the text as well as
 possible without breaking the multi-byte encoding.  It does this by detecting
 the character encoding of the text, and recursively deleting Japanese (possibly
@@ -39,17 +40,23 @@ returns the japanese text truncated to that byte length.
 
 =head1 SEE ALSO
 
-    Lingua::JA::Jcode
+L<Jcode>
+
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/HTML-Summary>
 
 =head1 AUTHOR
 
-Ave Wrigley E<lt>wrigley@cre.canon.co.ukE<gt>
+Originally written by Ave Wrigley (AWRIGLEY),
+now maintained by Neil Bowers (NEILB).
 
 =head1 COPYRIGHT
 
 Copyright (c) 1997 Canon Research Centre Europe (CRE). All rights reserved.
-This script and any associated documentation or files cannot be distributed
-outside of CRE without express prior permission from CRE.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 
@@ -75,7 +82,8 @@ use warnings;
 #
 #==============================================================================
 
-use Lingua::JA::Jcode;
+# use Lingua::JA::Jcode;
+use Jcode;
 require Exporter;
 
 #==============================================================================
@@ -94,7 +102,7 @@ use vars qw(
     %char_re
 );
 
-$VERSION = '0.018';
+$VERSION = '0.019';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( jtruncate );
 
@@ -170,7 +178,7 @@ sub jtruncate
 
     my $orig_text = $text;
 
-    my $encoding = Lingua::JA::Jcode::getcode( \$text );
+    my $encoding = Jcode::getcode( \$text );
     if ( not defined $encoding or $encoding !~ /^(?:euc|s?jis)$/ )
     {
 

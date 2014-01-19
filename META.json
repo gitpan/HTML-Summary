@@ -6,7 +6,7 @@
    "dynamic_config" : 1,
    "generated_by" : "ExtUtils::MakeMaker version 6.82, CPAN::Meta::Converter version 2.133380",
    "license" : [
-      "unknown"
+      "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -25,15 +25,11 @@
             "ExtUtils::MakeMaker" : "0"
          }
       },
-      "configure" : {
-         "requires" : {
-            "ExtUtils::MakeMaker" : "0"
-         }
-      },
       "runtime" : {
          "requires" : {
             "Exporter" : "0",
             "HTML::TreeBuilder" : "0",
+            "Jcode" : "2.06",
             "constant" : "0",
             "perl" : "5.006",
             "strict" : "0",
@@ -43,5 +39,12 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.018"
+   "resources" : {
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/neilbowers/HTML-Summary.git",
+         "web" : "https://github.com/neilbowers/HTML-Summary"
+      }
+   },
+   "version" : "0.019"
 }
